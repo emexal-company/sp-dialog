@@ -12,7 +12,7 @@
     limitations under the License.
 */
 
-import { html, css } from 'lit-element';
+import { html } from 'lit-element';
 import { classMap } from 'lit-html/directives/class-map.js';
 import { Dialog } from './dialog.component';
 
@@ -112,11 +112,12 @@ export function template(this: Dialog) {
 }
 
 export function templateFullscreen(this: Dialog) {
-
-    var demoStyles = '';
+    /*
+    let demoStyles = '';
     if (this.top) {
         demoStyles = `display: block !important; top: ${this.top}px !important; position: relative;`;
     }
+    */
 
     //Trigger 
     const trigger = [];

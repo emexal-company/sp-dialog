@@ -12,10 +12,10 @@
     limitations under the License.
 */
 
-import { customElement, property, css } from 'lit-element';
+import { customElement, property } from 'lit-element';
 import { Base } from '@spectrum/sp-base';
 import dialogStyles from './dialog.styles';
-import {template, templateFullscreen} from './dialog.template';
+import { template, templateFullscreen } from './dialog.template';
 
 import '@spectrum/sp-button';
 
@@ -44,7 +44,7 @@ export class Dialog extends Base {
 
   @property({ type: Boolean }) public dismissible: boolean = false;
   @property({ type: Boolean }) public hero: boolean = false;
-  
+
   @property({ type: Boolean }) public small: boolean = false;
   @property({ type: Boolean }) public medium: boolean = false;
   @property({ type: Boolean }) public large: boolean = false;
@@ -76,12 +76,14 @@ export class Dialog extends Base {
   }
 
   protected handleThirdButton() {
-    this.dispatchEvent(new CustomEvent('thirdbtnclicked', {
-      detail: {
-        ok,
-      },
-    }));
-  } 
+    /*
+        this.dispatchEvent(new CustomEvent('thirdbtnclicked', {
+          detail: {
+            ok,
+          },
+        }));
+    */
+  }
 
   protected notifyClick(ok: boolean) {
     if (ok) {
