@@ -69,10 +69,12 @@ export class Dialog extends Base {
 
   protected handleCancel() {
     this.notifyClick(false);
+    this.open = false;
   }
 
   protected handleOK() {
     this.notifyClick(true);
+    this.open = false;
   }
 
   protected handleThirdButton() {
@@ -86,16 +88,11 @@ export class Dialog extends Base {
   }
 
   protected notifyClick(ok: boolean) {
-    if (ok) {
-      this.dispatchEvent(new CustomEvent('clicked', {
-        detail: {
-          ok,
-        },
-      }));
-    } else {
-      this.open = ok;
-    }
-
+    this.dispatchEvent(new CustomEvent('clicked', {
+      detail: {
+        ok,
+      },
+    }));
   }
   protected render() {
     if (!this.fullscreen) {
